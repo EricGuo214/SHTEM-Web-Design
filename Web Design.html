@@ -6,29 +6,102 @@
     </title>
 
     <style>
-        
+        #all{
+            padding-left: 10px;
+        }
+        #title{
+            color: blue;
+        }
+        #paragraph{
+            font-size: medium;
+        }
+        #stanford{
+            color: red;
+        }
+        img{
+            max-width: 80%;
+            
+            margin-right: 20px;
+            
+            padding: 20px;
+        }
+        #pictureArea{
+            
+            
+            float: left;
+            max-width: 30%;
+        }
+        #pictureSelection{
+            padding: 20px;
+        }
     </style>
 
 
 </head>
 
-<body>
+<body></body>
     <div id="all">
         <div id="title">
             <h1>My Blog</h1>
         </div>
 
+        <div id="pictureArea">
+            <img id="image" src="ericPic.JPG" alt="ericPic">
+        </div>
+
         <div id="interests">
             <h3>My Interests</h3>
-            <div id="interestcontents">
-                I love food <br> I love food I love food 
+            <div id="paragraph">
+                I love food 
+                <br>
                 I love food 
                 I love food 
                 I love food 
                 I love food 
-                I love food    
+                I love food 
+                I love food 
+                I love food 
             </div>
         </div>
+
+        <div id="shtem">
+            <h3>What I hope to accomplish</h3>
+            <div id="paragraph"">
+                This summer, I hope to teach interns a lot about their interests in CS at
+                <span id="stanford">Stanford's</span> program!
+                <br>
+                I hope you all have a great time!
+            </div>
+        </div>
+
+        <div id="pictureSelection">
+            <form>
+                <select id="pictures" onchange="changePic()" size="3">
+                    <option value="pic1">Picture 1</option>
+                    <option value="pic2">Picture 2</option>
+                    <option value="pic3">Picture 3</option>
+                </select>
+            </form>
+        </div>
+
+        <script>
+
+            function changePic() {
+                var image = document.getElementById("image");
+                var selectedIndex = document.getElementById("pictures").selectedIndex;
+
+                if (selectedIndex == "0"){
+                    image.setAttribute("src", "ericPic.JPG");
+                }
+                if (selectedIndex == "1"){
+                    image.setAttribute("src", "sophPic.JPG");
+                }
+                if (selectedIndex == "2"){
+                    image.setAttribute("src", "seniorPic.JPG");
+                }
+            }
+        </script>
+
 </body>
 
 </html>
